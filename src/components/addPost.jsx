@@ -1,19 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const AddPost = () => {
+
+const AddPost = ({setPostText, addItem}) => {
+  
   return (
-    <>
+    
     <div className='addPost'>
-        <div className='pfp'><img src="src\assets\pfp.jpg" alt="" /></div>
-        <div>
-            <div ><input type="text" placeholder='What is happening?!' /></div>
-            <div>
-              <button className='postButton'>Post</button>
-            </div>
-        </div>
+        <div className='pfp'>
+          <img src="src\assets\pfp.jpg" alt="profile" /></div>
+        <form>
+          <textarea
+            name="postItem"  
+            placeholder='What is happening?!' 
+            required
+            
+            />
+          <button 
+          className='postButton'
+          onClick={addItem}
+          >Post</button>
+        </form>
     </div>
-
-    </>
+    
   )
 }
 
